@@ -47,22 +47,15 @@
     (aspellWithDicts (d: [d.en]))
     (hunspellWithDicts (with hunspellDicts; [en-us]))
     (nnn.override { withNerdIcons = true; })
-    asciidoctor
-    aws-vault
-    awscli
     babashka
     bat           # cat clone with syntax highlighting and git integration
     bind
     bitwarden-cli
     btop
-    clojure
     coursier      # jvm artifact fetcher + runner
     difftastic
     direnv
     ditaa
-    docker-compose
-    duckdb
-    duply
     exiftool      # cli app for reading, writing and editing meta information
     fd            # alternative to find
     ffmpeg
@@ -73,7 +66,6 @@
     git-lfs
     gitAndTools.git-annex
     gnuplot
-    go_1_18
     graphviz
     hledger
     httperf
@@ -82,22 +74,16 @@
     jq
     jsonnet
     lazygit       # terminal UI for git
-    leiningen
     mediainfo     # unified display of technical and tag data for video and audio files
     mitmproxy
     mr
-    neovim
-    nixfmt        # Nix code formatter
     nmap
-    nodejs-18_x
     odt2txt       # for opendocument previews
     offlineimap
-    openjdk
     packer
     perkeep
     plantuml
     poppler_utils # for pdf previews
-    postgresql_15
     #python38Packages.html2text
     #python38Packages.pdftotext
     #python38Packages.pip
@@ -105,18 +91,47 @@
     ripgrep
     rmapi         # cli tool for interacting with reMarkable cloud
     shellcheck
-    sonic-pi
     sox
-    sqlite
-    swiProlog
-    terraform
-    terraform-docs
-    terraform-ls
-    terragrunt
     tmuxp         # tmux workspace manager
     w3m
     yamllint
     zip
+
+    ##
+    ## Development
+    ##
+
+    # Clojure and Java
+    clj-kondo
+    clojure
+    clojure-lsp
+    leiningen
+    openjdk
+
+    # Database
+    duckdb
+    postgresql_15
+    sqlite
+
+    # Devops
+    aws-vault
+    awscli
+    docker-compose
+    terraform
+    terraform-docs
+    terraform-ls
+    terragrunt
+
+    # Neovim
+    neovim
+    neovim-remote
+
+    # Nix
+    nixfmt # Nix code formatter
+
+    # Node.js
+    biome
+    nodejs-18_x
 
     # Python
     python3
@@ -151,8 +166,6 @@
     signal-desktop
     slack
     tdesktop      # telegram desktop
-    teams
-    thunderbird
 
     # Fonts
     carlito
@@ -176,8 +189,6 @@
     #appimage-run
     bitwarden
     brave
-    clj-kondo
-    clojure-lsp
     dbeaver
     emacs
     evince
@@ -197,7 +208,6 @@
     mplayer
     ncftp
     netlogo
-    neovim-remote
     nyxt
     pamixer
     paperwork
@@ -213,10 +223,7 @@
     steam-run
     stylua
     transmission-gtk
-    #treesheets
     trezor-suite
-    #xpad
-    youtube-dl
     #zoom-us
   ];
 
