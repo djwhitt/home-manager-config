@@ -205,6 +205,7 @@
     pulseaudio
     #playonlinux
     #python310Packages.py3status
+    restic
     spaceFM
     spotify
     standardnotes
