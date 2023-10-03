@@ -47,7 +47,6 @@
     (aspellWithDicts (d: [d.en]))
     (hunspellWithDicts (with hunspellDicts; [en-us]))
     (nnn.override { withNerdIcons = true; })
-    babashka
     bat           # cat clone with syntax highlighting and git integration
     bind
     bitwarden-cli
@@ -80,7 +79,6 @@
     nmap
     odt2txt       # for opendocument previews
     offlineimap
-    packer
     perkeep
     plantuml
     poppler_utils # for pdf previews
@@ -90,7 +88,6 @@
     ranger
     ripgrep
     rmapi         # cli tool for interacting with reMarkable cloud
-    shellcheck
     sox
     tmuxp         # tmux workspace manager
     w3m
@@ -102,6 +99,7 @@
     ##
 
     # Clojure and Java
+    babashka
     clj-kondo
     clojure
     clojure-lsp
@@ -117,14 +115,20 @@
     aws-vault
     awscli
     docker-compose
+    packer
+    shellcheck
     terraform
     terraform-docs
     terraform-ls
     terragrunt
 
-    # Neovim
+    # Editors
+    emacs
     neovim
     neovim-remote
+
+    # Lua
+    stylua
 
     # Nix
     nixfmt # Nix code formatter
@@ -139,7 +143,9 @@
     python310Packages.isort
     yapf
 
+    ##
     ## Desktop
+    ##
 
     # X utils
     copyq         # clipboard manager
@@ -149,8 +155,7 @@
     gnome.zenity  # dialog boxes
     hacksaw       # area selection tool
     libnotify
-    lsix
-    rofi
+    rofi          # switcher/launcher
     shotgun       # screenshot tool
     wmctrl
     xclip
@@ -161,14 +166,16 @@
 
     # Communication
     discord
-    neomutt
+    neomutt       # mail client
     notmuch       # mail indexer
     signal-desktop
     slack
     tdesktop      # telegram desktop
 
     # Fonts
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
     carlito
+    fira-code
 
     # Gnome utils
     gnome.dconf-editor
@@ -178,24 +185,23 @@
     gimp
     inkscape
 
-    # Video
-    kdenlive
-    obs-studio
-    #openshot-qt
+    # Crypto Wallets
+    ledger-live-desktop
+    trezor-suite
+
+    # Browsers
+    brave
+    firefox
+    nyxt
 
     # Misc
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
     anki
     #appimage-run
     bitwarden
-    brave
     dbeaver
-    emacs
     evince
     feh
     ffmpegthumbnailer  # video thumbnailer
-    fira-code
-    firefox
     freeplane
     gnome.simple-scan
     gnumeric
@@ -203,28 +209,20 @@
     keybase
     keybase-gui
     leafpad
-    ledger-live-desktop
     libreoffice
     mplayer
     ncftp
     netlogo
-    nyxt
     pamixer
     paperwork
-    pasystray
     pulseaudio
-    #playonlinux
-    #python310Packages.py3status
     restic
     spaceFM
     spotify
     standardnotes
     steam
     steam-run
-    stylua
     transmission-gtk
-    trezor-suite
-    #zoom-us
   ];
 
   services.dunst ={
