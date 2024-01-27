@@ -51,6 +51,7 @@
     bind
     bitwarden-cli
     btop
+    cargo
     coursier      # jvm artifact fetcher + runner
     difftastic
     direnv
@@ -61,6 +62,7 @@
     file
     #fzf          # cli fuzzy finder
     gcc
+    gh
     git
     git-lfs
     gitAndTools.git-annex
@@ -73,6 +75,8 @@
     jq
     jsonnet
     lazygit       # terminal UI for git
+    lf            # terminal file manager
+    llama-cpp
     mediainfo     # unified display of technical and tag data for video and audio files
     mitmproxy
     mr
@@ -80,6 +84,7 @@
     odt2txt       # for opendocument previews
     offlineimap
     perkeep
+    pistol
     plantuml
     poppler_utils # for pdf previews
     #python38Packages.html2text
@@ -89,6 +94,7 @@
     ripgrep
     rmapi         # cli tool for interacting with reMarkable cloud
     sox
+    #src-cli
     tmuxp         # tmux workspace manager
     w3m
     yamllint
@@ -98,15 +104,32 @@
     ## Development
     ##
 
-    # Clojure and Java
-    babashka
+    # Linters, formatters, and LSP
+    biome                    # TypeScript linter and formatter
     clj-kondo
-    clojure
     clojure-lsp
+    efm-langserver           # Generic LSP server
+    luajitPackages.luacheck  # Lua linter
+    nixfmt
+    python310Packages.flake8 # Python linter
+    python310Packages.isort  # Python formatter
+    shellcheck               # Shell linter
+    stylua                   # Lua formatter
+    terraform-ls             # Terraform LSP server
+    yapf                     # Python formatter
+
+    # Build tools
     leiningen
+
+    # Languages and runtimes
+    babashka
+    clojure
+    nodejs-18_x
     openjdk
+    python3
 
     # Database
+    beekeeper-studio
     duckdb
     postgresql_15
     sqlite
@@ -116,32 +139,14 @@
     awscli
     docker-compose
     packer
-    shellcheck
     terraform
     terraform-docs
-    terraform-ls
     terragrunt
 
     # Editors
     emacs
     neovim
     neovim-remote
-
-    # Lua
-    stylua
-
-    # Nix
-    nixfmt # Nix code formatter
-
-    # Node.js
-    biome
-    nodejs-18_x
-
-    # Python
-    python3
-    python310Packages.flake8
-    python310Packages.isort
-    yapf
 
     ##
     ## Desktop
@@ -163,6 +168,7 @@
     xorg.xev      # X event viewer
     xorg.xprop
     xorg.xwininfo
+    xsel
 
     # Communication
     discord
@@ -205,11 +211,11 @@
     freeplane
     gnome.simple-scan
     gnumeric
-    gscan2pdf
     keybase
     keybase-gui
     leafpad
     libreoffice
+    libsForQt5.dragon
     mplayer
     ncftp
     netlogo
