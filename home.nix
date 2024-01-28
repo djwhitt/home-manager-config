@@ -6,9 +6,7 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = [
-      "openssl-1.1.1v"
-    ];
+    permittedInsecurePackages = [ "openssl-1.1.1v" ];
   };
 
   fonts.fontconfig.enable = true;
@@ -44,20 +42,20 @@
   home.packages = with pkgs; [
     ## CLI
 
-    (aspellWithDicts (d: [d.en]))
-    (hunspellWithDicts (with hunspellDicts; [en-us]))
+    (aspellWithDicts (d: [ d.en ]))
+    (hunspellWithDicts (with hunspellDicts; [ en-us ]))
     (nnn.override { withNerdIcons = true; })
-    bat           # cat clone with syntax highlighting and git integration
+    bat # cat clone with syntax highlighting and git integration
     bind
     bitwarden-cli
     btop
     cargo
-    coursier      # jvm artifact fetcher + runner
+    coursier # jvm artifact fetcher + runner
     difftastic
     direnv
     ditaa
-    exiftool      # cli app for reading, writing and editing meta information
-    fd            # alternative to find
+    exiftool # cli app for reading, writing and editing meta information
+    fd # alternative to find
     ffmpeg
     file
     #fzf          # cli fuzzy finder
@@ -74,14 +72,14 @@
     jekyll
     jq
     jsonnet
-    lazygit       # terminal UI for git
-    lf            # terminal file manager
+    lazygit # terminal UI for git
+    lf # terminal file manager
     llama-cpp
-    mediainfo     # unified display of technical and tag data for video and audio files
+    mediainfo # unified display of technical and tag data for video and audio files
     mitmproxy
     mr
     nmap
-    odt2txt       # for opendocument previews
+    odt2txt # for opendocument previews
     offlineimap
     perkeep
     pistol
@@ -92,10 +90,10 @@
     #python38Packages.pip
     ranger
     ripgrep
-    rmapi         # cli tool for interacting with reMarkable cloud
+    rmapi # cli tool for interacting with reMarkable cloud
     sox
     #src-cli
-    tmuxp         # tmux workspace manager
+    tmuxp # tmux workspace manager
     w3m
     yamllint
     zip
@@ -105,18 +103,19 @@
     ##
 
     # Linters, formatters, and LSP
-    biome                    # TypeScript linter and formatter
+    biome # TypeScript linter and formatter
+    checkmake # Makefile linter
     clj-kondo
     clojure-lsp
-    efm-langserver           # Generic LSP server
-    luajitPackages.luacheck  # Lua linter
+    efm-langserver # Generic LSP server
+    luajitPackages.luacheck # Lua linter
     nixfmt
     python310Packages.flake8 # Python linter
-    python310Packages.isort  # Python formatter
-    shellcheck               # Shell linter
-    stylua                   # Lua formatter
-    terraform-ls             # Terraform LSP server
-    yapf                     # Python formatter
+    python310Packages.isort # Python formatter
+    shellcheck # Shell linter
+    stylua # Lua formatter
+    terraform-ls # Terraform LSP server
+    yapf # Python formatter
 
     # Build tools
     leiningen
@@ -153,30 +152,30 @@
     ##
 
     # X utils
-    copyq         # clipboard manager
-    flameshot     # screenshot tool
+    copyq # clipboard manager
+    flameshot # screenshot tool
     glxinfo
-    gnome.eog     # image viewer
-    gnome.zenity  # dialog boxes
-    hacksaw       # area selection tool
+    gnome.eog # image viewer
+    gnome.zenity # dialog boxes
+    hacksaw # area selection tool
     libnotify
-    rofi          # switcher/launcher
-    shotgun       # screenshot tool
+    rofi # switcher/launcher
+    shotgun # screenshot tool
     wmctrl
     xclip
     xdotool
-    xorg.xev      # X event viewer
+    xorg.xev # X event viewer
     xorg.xprop
     xorg.xwininfo
     xsel
 
     # Communication
     discord
-    neomutt       # mail client
-    notmuch       # mail indexer
+    neomutt # mail client
+    notmuch # mail indexer
     signal-desktop
     slack
-    tdesktop      # telegram desktop
+    tdesktop # telegram desktop
 
     # Fonts
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
@@ -207,7 +206,7 @@
     dbeaver
     evince
     feh
-    ffmpegthumbnailer  # video thumbnailer
+    ffmpegthumbnailer # video thumbnailer
     freeplane
     gnome.simple-scan
     gnumeric
@@ -231,7 +230,7 @@
     transmission-gtk
   ];
 
-  services.dunst ={
+  services.dunst = {
     enable = true;
     settings = {
       global = {
@@ -248,7 +247,9 @@
         #   %I  iconname (without its path)
         #   %p  progress value if set ([  0%] to [100%]) or nothing
         # Markup is allowed
-        format = "<b>%s</b>\n%b";
+        format = ''
+          <b>%s</b>
+          %b'';
 
         # Sort messages by urgency.
         sort = "no";
@@ -258,7 +259,7 @@
 
         # Alignment of message text.
         # Possible values are "left", "center" and "right".
-        alignment =  "center";
+        alignment = "center";
 
         # The frequency with wich text that is longer than the notification
         # window allows bounces back and forth.
