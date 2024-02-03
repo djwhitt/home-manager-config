@@ -6,7 +6,7 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = [ "openssl-1.1.1v" ];
+    permittedInsecurePackages = [ "libxls-1.6.2" ];
   };
 
   fonts.fontconfig.enable = true;
@@ -25,20 +25,6 @@
   home.homeDirectory = "/home/djwhitt";
   home.username = "djwhitt";
 
-  #sg = let
-  #  package = inputs.sg-nvim.packages.${system}.default;
-  #in {
-  #  inherit package;
-  #  init = pkgs.writeTextFile {
-  #    name = "sg.lua";
-  #    text = ''
-  #      return function()
-  #      package.cpath = package.cpath .. ";" .. "${package}/lib/?.so;${package}/lib/?.dylib"
-  #      end
-  #      '';
-  #  };
-  #};
-
   home.packages = with pkgs; [
     ## CLI
 
@@ -50,7 +36,6 @@
     bitwarden-cli
     btop
     cargo
-    coursier # jvm artifact fetcher + runner
     difftastic
     direnv
     ditaa
@@ -68,7 +53,6 @@
     graphviz
     hledger
     httperf
-    httpie
     jekyll
     jq
     jsonnet
@@ -82,20 +66,20 @@
     odt2txt # for opendocument previews
     offlineimap
     perkeep
-    pistol
+    pistol # cli tool for previewing files
     plantuml
     poppler_utils # for pdf previews
     #python38Packages.html2text
     #python38Packages.pdftotext
     #python38Packages.pip
     ranger
+    restic # backup tool
     ripgrep
     rmapi # cli tool for interacting with reMarkable cloud
+    sc-im
     sox
-    #src-cli
     tmuxp # tmux workspace manager
     w3m
-    yamllint
     zip
 
     ##
@@ -105,7 +89,7 @@
     # Linters, formatters, and LSP
     biome # TypeScript linter and formatter
     checkmake # Makefile linter
-    clj-kondo
+    clj-kondo # Clojure linter
     clojure-lsp
     efm-langserver # Generic LSP server
     luajitPackages.luacheck # Lua linter
@@ -115,6 +99,7 @@
     shellcheck # Shell linter
     stylua # Lua formatter
     terraform-ls # Terraform LSP server
+    yamllint # YAML linter
     yapf # Python formatter
 
     # Build tools
@@ -128,12 +113,11 @@
     python3
 
     # Database
-    beekeeper-studio
     duckdb
     postgresql_15
     sqlite
 
-    # Devops
+    # Ops
     aws-vault
     awscli
     docker-compose
@@ -156,11 +140,8 @@
     flameshot # screenshot tool
     glxinfo
     gnome.eog # image viewer
-    gnome.zenity # dialog boxes
-    hacksaw # area selection tool
     libnotify
     rofi # switcher/launcher
-    shotgun # screenshot tool
     wmctrl
     xclip
     xdotool
@@ -190,28 +171,22 @@
     gimp
     inkscape
 
-    # Crypto Wallets
+    # Crypto
     ledger-live-desktop
     trezor-suite
 
     # Browsers
     brave
     firefox
-    nyxt
 
     # Misc
     anki
-    #appimage-run
     bitwarden
-    dbeaver
     evince
     feh
     ffmpegthumbnailer # video thumbnailer
     freeplane
-    gnome.simple-scan
     gnumeric
-    keybase
-    keybase-gui
     leafpad
     libreoffice
     libsForQt5.dragon
@@ -221,7 +196,6 @@
     pamixer
     paperwork
     pulseaudio
-    restic
     spaceFM
     spotify
     standardnotes
