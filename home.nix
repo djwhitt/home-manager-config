@@ -72,10 +72,8 @@
     #python38Packages.html2text
     #python38Packages.pdftotext
     #python38Packages.pip
-    ranger
     restic # backup tool
     ripgrep
-    rmapi # cli tool for interacting with reMarkable cloud
     sc-im
     sox
     tmuxp # tmux workspace manager
@@ -86,20 +84,20 @@
     ## Development
     ##
 
-    # Linters, formatters, and LSP
+    # Linters, formatters, and LSP servers
     biome # TypeScript linter and formatter
-    checkmake # Makefile linter
-    clj-kondo # Clojure linter
+    clj-kondo # Linter
     clojure-lsp
-    efm-langserver # Generic LSP server
-    luajitPackages.luacheck # Lua linter
+    efm-langserver # Generic LSP
+    luajitPackages.luacheck # Linter
+    nil # Nix LSP
     nixfmt
-    python310Packages.flake8 # Python linter
-    python310Packages.isort # Python formatter
-    shellcheck # Shell linter
-    stylua # Lua formatter
-    terraform-ls # Terraform LSP server
-    yamllint # YAML linter
+    python310Packages.flake8 # Linter
+    python310Packages.isort # Formatter
+    shellcheck
+    stylua
+    terraform-ls # LSP
+    yamllint
     yapf # Python formatter
 
     # Build tools
@@ -152,11 +150,11 @@
 
     # Communication
     discord
-    neomutt # mail client
+    neomutt
     notmuch # mail indexer
     signal-desktop
     slack
-    tdesktop # telegram desktop
+    tdesktop # telegram client
 
     # Fonts
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
@@ -183,25 +181,22 @@
     anki
     bitwarden
     evince
-    feh
     ffmpegthumbnailer # video thumbnailer
     freeplane
     gnumeric
     leafpad
     libreoffice
-    libsForQt5.dragon
-    mplayer
     ncftp
     netlogo
     pamixer
     paperwork
     pulseaudio
-    spaceFM
     spotify
     standardnotes
     steam
     steam-run
     transmission-gtk
+    vlc
   ];
 
   services.dunst = {
