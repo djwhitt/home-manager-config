@@ -31,11 +31,11 @@
     (aspellWithDicts (d: [ d.en ]))
     (hunspellWithDicts (with hunspellDicts; [ en-us ]))
     (nnn.override { withNerdIcons = true; })
+    atuin
     bat # cat clone with syntax highlighting and git integration
     bind
     bitwarden-cli
     btop
-    cargo
     difftastic
     direnv
     ditaa
@@ -53,6 +53,7 @@
     graphviz
     hledger
     httperf
+    inotify-tools
     jekyll
     jq
     jsonnet
@@ -77,6 +78,7 @@
     sc-im
     sox
     tmuxp # tmux workspace manager
+    visidata
     w3m
     zip
 
@@ -113,7 +115,7 @@
     # Database
     duckdb
     postgresql_15
-    sqlite
+    sqlite-interactive
 
     # Ops
     aws-vault
@@ -135,6 +137,7 @@
 
     # X utils
     copyq # clipboard manager
+    feh
     flameshot # screenshot tool
     glxinfo
     gnome.eog # image viewer

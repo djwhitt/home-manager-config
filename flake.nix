@@ -8,17 +8,24 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    atuin = {
+      url = "github:atuinsh/atuin?ref=v17.2.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     llama-cpp = {
       url = "github:ggerganov/llama.cpp";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, llama-cpp, ... }:
+  outputs = { nixpkgs, home-manager, atuin, llama-cpp, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { 
-        overlays = [ (llama-cpp.overlays.default) ];
+        overlays = [ 
+          (llama-cpp.overlays.default) 
+          (atuin.overlays.default) 
+        ];
         inherit system; 
         config.allowUnfree = true;
       };
