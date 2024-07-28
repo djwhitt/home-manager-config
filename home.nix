@@ -206,7 +206,7 @@
     standardnotes
     steam
     steam-run
-    transmission-gtk
+    transmission_4-gtk
     vlc
   ];
 
