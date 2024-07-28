@@ -163,7 +163,12 @@
     tdesktop # telegram client
 
     # Fonts
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "DroidSansMono"
+      ];
+    })
     carlito
     fira-code
 
