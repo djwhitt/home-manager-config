@@ -87,15 +87,18 @@
     ##
 
     # Linters, formatters, and LSP servers
+    bash-language-server
     biome # TypeScript linter and formatter
     clj-kondo # Linter
     clojure-lsp
     efm-langserver # Generic LSP
+    lua-language-server
     luajitPackages.luacheck # Linter
     nil # Nix LSP
-    nixfmt
+    nixfmt-rfc-style
     python310Packages.flake8 # Linter
     python310Packages.isort # Formatter
+    selene # Lua formatter
     shellcheck
     stylua
     terraform-ls # LSP
